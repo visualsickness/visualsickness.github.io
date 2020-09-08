@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<head>
+
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Work+Sans">
+
+
+<style>
+
+    .Header {
+  background-color: white;
+  text-align: center;
+        padding: 10px;
+}
+
+    .symptoms {
+  margin: auto;
+  margin-top: 10px;
+  background: white;
+  width: 800px;
+  padding: 10px;
+}
+
+ .pictures {
+  margin: auto;
+  margin-top: 10px;
+  background: white;
+  align-items:  : center;
+  padding: 10px;
+}
+
+.pictures img {
+  border: 3px solid lightblue;
+  border-radius: 4px;
+  width: 180px;
+  margin: auto;
+
+    margin: auto;
+}
+    body 
+    {
+
+        padding: 0px;
+          align-content: : center;
+        background-color: lightblue;
+    }
+
+    h1   
+    {
+        color: lightblue;
+        text-align: center;
+        font-size: : 40px;
+        font-family: 'Work Sans', bold;
+    }
+
+        h2
+    {
+        color: gray;
+        text-align: left;
+        font-size: : 30px;
+        font-family: 'Work Sans', bold;
+    }
+
+    p    
+    {
+        color: red;
+        
+    }
+
+    .slidecontainer {
+  margin:auto;
+  width: 78%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: black; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+</style>
+
+</head>
+
+<html>
+<body>
+
+<div class="Header">
+  <hr>
+  <h1>Cybersickness Online Questionnaire</h1>
+  <hr>
+</div>
+
+<div class="symptoms">
+  <h2>General Discomfort</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/discomfort1.png" alt="Basic">
+	<img src="images/discomfort2.png" alt="Basic">
+	<img src="images/discomfort3.png" alt="Basic">
+	</div>
+
+	<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</div>
+</div>
+
+<div class="symptoms">
+  <h2>Fatigue</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/base0.png" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Headache</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/headache1.gif" alt="Basic">
+	<img src="images/headache2.gif" alt="Basic">
+	<img src="images/headache3.gif" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Eye Strain</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/eyeStrain1.gif" alt="Basic">
+	<img src="images/eyeStrain2.gif" alt="Basic">
+	<img src="images/eyeStrain3.gif" alt="Basic">
+	</div>
+</div>
+
+
+<div class="symptoms">
+  <h2>Increased Salivation</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/saliva1.gif" alt="Basic">
+	<img src="images/saliva2.gif" alt="Basic">
+	<img src="images/saliva3.gif" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Sweating</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/sweat1.gif" alt="Basic">
+	<img src="images/sweat2.gif" alt="Basic">
+	<img src="images/sweat3.gif" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Nausea</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/nausea1.png" alt="Basic">
+	<img src="images/nausea2.png" alt="Basic">
+	<img src="images/nausea3.png" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Difficulty Concentrating</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/focus1.gif" alt="Basic">
+	<img src="images/focus2.gif" alt="Basic">
+	<img src="images/focus3.gif" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Fullness of the Head</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/base0.gif" alt="Basic">
+	<img src="images/base0.gif" alt="Basic">
+	<img src="images/base0.gif" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Blurred Vision</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/blur1.png" alt="Basic">
+	<img src="images/blur2.png" alt="Basic">
+	<img src="images/blur3.png" alt="Basic">
+	</div>
+</div>
+
+<div class="symptoms">
+  <h2>Dizziness with Eyes Open</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/dizzy1.gif" alt="Basic">
+	<img src="images/dizzy2.gif" alt="Basic">
+	<img src="images/dizzy3.gif" alt="Basic">
+	</div>
+</div>
+
+
+<div class="symptoms">
+  <h2>Dizziness with Eyes Closed</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/dizzyClose1.gif" alt="Basic">
+	<img src="images/dizzyClose2.gif" alt="Basic">
+	<img src="images/dizzyClose3.gif" alt="Basic">
+	</div>
+</div>
+
+
+
+<div class="symptoms">
+  <h2>Vertigo</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/vertigo1.gif" alt="Basic">
+	<img src="images/vertigo2.gif" alt="Basic">
+	<img src="images/vertigo3.gif" alt="Basic">
+	</div>
+</div>
+
+
+
+<div class="symptoms">
+  <h2>Stomach Awareness</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/stomach1.png" alt="Basic">
+	<img src="images/stomach2.png" alt="Basic">
+	<img src="images/stomach3.png" alt="Basic">
+	</div>
+</div>
+
+
+
+<div class="symptoms">
+  <h2>Burping</h2>
+  <hr>
+
+	<div class = "pictures">
+	<img src="images/base0.png" alt="Basic">
+	<img src="images/burp1.gif" alt="Basic">
+	<img src="images/burp2.gif" alt="Basic">
+	<img src="images/burp3.gif" alt="Basic">
+	</div>
+</div>
+
+
+
+</body>
+</html>
