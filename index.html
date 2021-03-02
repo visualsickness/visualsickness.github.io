@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
 <head>
 
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Work+Sans">
 
+<link rel="stylesheet" href="<?php echo $set->url; ?>../css/bootstrap.min.css">
 
 <style>
 
@@ -18,7 +16,7 @@
   margin: auto;
   margin-top: 10px;
   background: white;
-  width: 800px;
+  width: 53%;
   padding: 10px;
 }
 
@@ -93,8 +91,40 @@
 </head>
 
 
+
+
 <html>
 <body>
+
+<script type="text/javascript">
+    function calc() {
+        var general_discomfort = parseInt(document.querySelector('input[name="general_discomfort"]:checked').value);
+        var fatigue = parseInt(document.querySelector('input[name="fatigue"]:checked').value);
+        var headache = parseInt(document.querySelector('input[name="headache"]:checked').value);
+        var eye_strain = parseInt(document.querySelector('input[name="eye_strain"]:checked').value);
+        var difficulty_focusing = parseInt(document.querySelector('input[name="difficulty_focusing"]:checked').value);
+        var increased_salivation = parseInt(document.querySelector('input[name="increased_salivation"]:checked').value);
+        var sweating = parseInt(document.querySelector('input[name="sweating"]:checked').value);
+        var nausea = parseInt(document.querySelector('input[name="nausea"]:checked').value);
+        var difficulty_concentrating = parseInt(document.querySelector('input[name="difficulty_concentrating"]:checked').value);
+        var fullness_of_head = parseInt(document.querySelector('input[name="fullness_of_head"]:checked').value);
+        var blurred_vision = parseInt(document.querySelector('input[name="blurred_vision"]:checked').value);
+        var dizziness_with_eyes_open = parseInt(document.querySelector('input[name="dizziness_with_eyes_open"]:checked').value);
+        var dizziness_with_eyes_closed = parseInt(document.querySelector('input[name="dizziness_with_eyes_closed"]:checked').value);
+        var vertigo = parseInt(document.querySelector('input[name="vertigo"]:checked').value);
+        var stomach_awareness = parseInt(document.querySelector('input[name="stomach_awareness"]:checked').value);
+        var burping = parseInt(document.querySelector('input[name="burping"]:checked').value);
+
+        var nauseaScore = (general_discomfort + increased_salivation + sweating + nausea + difficulty_concentrating + stomach_awareness + burping) * 9.54
+        var oculomotorScore = (general_discomfort + fatigue + headache + eye_strain + difficulty_focusing + difficulty_concentrating + blurred_vision) * 7.58
+        var disorientationScore = (difficulty_focusing + nausea + fullness_of_head + blurred_vision + dizziness_with_eyes_open + dizziness_with_eyes_closed + vertigo) * 13.92
+        var totalScore = (nauseaScore + oculomotorScore + disorientationScore) * 3.74
+
+        alert("Nausea Score: " + nauseaScore + "\n" + "Oculomotor Score: " + oculomotorScore + "\n" + "Disorientation Score: " + disorientationScore + "\n" + "Total Score: " + totalScore)
+    }
+
+</script>
+
 
 
 <div class="Header">
@@ -108,19 +138,19 @@
   <hr>
     <div class = "pictures">
         <label>
-            <input type="radio" id="discomfort0" name="discomfort" value="0" checked>
+            <input type="radio" id="discomfort0" name="general_discomfort" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="discomfort1" name="discomfort" value="1" >
+            <input type="radio" id="discomfort1" name="general_discomfort" value="1">
             <img src="images/discomfort1.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="discomfort2" name="discomfort" value="2" >
+            <input type="radio" id="discomfort2" name="general_discomfort" value="2">
             <img src="images/discomfort2.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="discomfort3" name="discomfort" value="3" >
+            <input type="radio" id="discomfort3" name="general_discomfort" value="3">
             <img src="images/discomfort3.png" alt="Basic">
         </label>
     </div>
@@ -137,16 +167,16 @@
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="fatigue1" name="fatigue" value="1" >
-            <img src="images/fatigue1.gif" alt="Basic">
+            <input type="radio" id="fatigue1" name="fatigue" value="1">
+            <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="fatigue2" name="fatigue" value="2" >
-            <img src="images/fatigue2.gif" alt="Basic">
+            <input type="radio" id="fatigue2" name="fatigue" value="2">
+            <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="fatigue3" name="fatigue" value="3" >
-            <img src="images/fatigue3.gif" alt="Basic">
+            <input type="radio" id="fatigue3" name="fatigue" value="3">
+            <img src="images/base0.png" alt="Basic">
         </label>
     </div>
 </div>
@@ -161,15 +191,15 @@
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="headache1" name="headache" value="1" >
+            <input type="radio" id="headache1" name="headache" value="1">
             <img src="images/headache1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="headache2" name="headache" value="2" >
+            <input type="radio" id="headache2" name="headache" value="2">
             <img src="images/headache2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="headache3" name="headache" value="3" >
+            <input type="radio" id="headache3" name="headache" value="3">
             <img src="images/headache3.gif" alt="Basic">
         </label>
     </div>
@@ -181,24 +211,59 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="eyestrain0" name="eyestrain" value="0" checked>
+            <input type="radio" id="eyestrain0" name="eye_strain" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="eyestrain1" name="eyestrain" value="1" >
+            <input type="radio" id="eyestrain1" name="eye_strain" value="1">
             <img src="images/eyeStrain1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="eyestrain2" name="eyestrain" value="2" >
+            <input type="radio" id="eyestrain2" name="eye_strain" value="2">
             <img src="images/eyeStrain2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="eyestrain3" name="eyestrain" value="3" >
+            <input type="radio" id="eyestrain3" name="eye_strain" value="3">
             <img src="images/eyeStrain3.gif" alt="Basic">
         </label>
     </div>
 </div>
 
+<div class="symptoms">
+  <h2>Difficulty Focusing</h2>
+  <hr>
+
+    <div class = "pictures">
+        <label>
+            <input type="radio" id="difficulty_focusing0" name="difficulty_focusing" value="0" checked>
+            <img src="images/base0.png" alt="Basic">
+            <center>
+              <p>None</p>
+            </center>
+        </label>
+        <label>
+            <input type="radio" id="difficulty_focusing1" name="difficulty_focusing" value="1">
+            <img src="images/difficultyfocusing1.gif" alt="Basic">
+            <center>
+              <p>Slight</p>
+            </center>
+        </label>
+        <label>
+            <input type="radio" id="difficulty_focusing2" name="difficulty_focusing" value="2">
+            <img src="images/difficultyfocusing2.gif" alt="Basic">
+            <center>
+              <p>Moderate</p>
+            </center>
+        </label>
+        <label>
+            <input type="radio" id="difficulty_focusing3" name="difficulty_focusing" value="3">
+            <img src="images/difficultyfocusing3.gif" alt="Basic">
+            <center>
+              <p>Severe</p>
+            </center>
+        </label>
+    </div>
+</div>
 
 <div class="symptoms">
   <h2>Increased Salivation</h2>
@@ -206,19 +271,19 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="saliva0" name="saliva" value="0" checked>
+            <input type="radio" id="saliva0" name="increased_salivation" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="saliva1" name="saliva" value="1" >
+            <input type="radio" id="saliva1" name="increased_salivation" value="1">
             <img src="images/saliva1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="saliva2" name="saliva" value="2" >
+            <input type="radio" id="saliva2" name="increased_salivation" value="2">
             <img src="images/saliva2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="saliva3" name="saliva" value="3" >
+            <input type="radio" id="saliva3" name="increased_salivation" value="3">
             <img src="images/saliva3.gif" alt="Basic">
         </label>
     </div>
@@ -230,19 +295,19 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="sweat0" name="sweat" value="0" checked>
+            <input type="radio" id="sweat0" name="sweating" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="sweat1" name="sweat" value="1" >
+            <input type="radio" id="sweat1" name="sweating" value="1">
             <img src="images/sweat1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="sweat2" name="sweat" value="2" >
+            <input type="radio" id="sweat2" name="sweating" value="2">
             <img src="images/sweat2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="sweat3" name="sweat" value="3" >
+            <input type="radio" id="sweat3" name="sweating" value="3">
             <img src="images/sweat3.gif" alt="Basic">
         </label>
     </div>
@@ -258,15 +323,15 @@
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="nausea1" name="nausea" value="1" >        
+            <input type="radio" id="nausea1" name="nausea" value="1">        
             <img src="images/nausea1.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="nausea2" name="nausea" value="2" >
+            <input type="radio" id="nausea2" name="nausea" value="2">
             <img src="images/nausea2.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="nausea3" name="nausea" value="3" >
+            <input type="radio" id="nausea3" name="nausea" value="3">
             <img src="images/nausea3.png" alt="Basic">
         </label>
     </div>
@@ -278,20 +343,20 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="focus0" name="focus" value="0" checked>
+            <input type="radio" id="focus0" name="difficulty_concentrating" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="focus1" name="focus" value="1" >
-            <img src="images/difficultyfocusing1.gif" alt="Basic">
+            <input type="radio" id="focus1" name="difficulty_concentrating" value="1">
+            <img src="images/focus1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="focus2" name="focus" value="2" >
-            <img src="images/difficultyfocusing2.gif" alt="Basic">
+            <input type="radio" id="focus2" name="difficulty_concentrating" value="2">
+            <img src="images/focus2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="focus3" name="focus" value="3" >
-            <img src="images/difficultyfocusing3.gif" alt="Basic">
+            <input type="radio" id="focus3" name="difficulty_concentrating" value="3">
+            <img src="images/focus3.gif" alt="Basic">
         </label>
 
             
@@ -304,19 +369,19 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="fullness0" name="fullness" value="0" checked>
+            <input type="radio" id="fullness0" name="fullness_of_head" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="fullness1" name="fullness" value="1" >
+            <input type="radio" id="fullness1" name="fullness_of_head" value="1">
             <img src="images/fulness1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="fullness2" name="fullness" value="2" >
+            <input type="radio" id="fullness2" name="fullness_of_head" value="2">
             <img src="images/fulness2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="fullness3" name="fullness" value="3" >
+            <input type="radio" id="fullness3" name="fullness_of_head" value="3">
             <img src="images/fulness3.gif" alt="Basic">
         </label>
     </div>
@@ -328,19 +393,19 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="blurred0" name="blurred" value="0" checked>
+            <input type="radio" id="blurred0" name="blurred_vision" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="blurred1" name="blurred" value="1" >
+            <input type="radio" id="blurred1" name="blurred_vision" value="1">
             <img src="images/blur1.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="blurred2" name="blurred" value="2" >
+            <input type="radio" id="blurred2" name="blurred_vision" value="2">
             <img src="images/blur2.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="blurred3" name="blurred" value="3" >
+            <input type="radio" id="blurred3" name="blurred_vision" value="3">
             <img src="images/blur3.png" alt="Basic">
         </label>
     </div>
@@ -352,19 +417,19 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="dizzinessEyes0" name="dizzinessEyes" value="0" checked>
+            <input type="radio" id="dizzinessEyes0" name="dizziness_with_eyes_open" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="dizzinessEyes1" name="dizzinessEyes" value="1" >
+            <input type="radio" id="dizzinessEyes1" name="dizziness_with_eyes_open" value="1">
             <img src="images/dizzy1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="dizzinessEyes2" name="dizzinessEyes" value="2" >
+            <input type="radio" id="dizzinessEyes2" name="dizziness_with_eyes_open" value="2">
             <img src="images/dizzy2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="dizzinessEyes3" name="dizzinessEyes" value="3" >
+            <input type="radio" id="dizzinessEyes3" name="dizziness_with_eyes_open" value="3">
             <img src="images/dizzy3.gif" alt="Basic">
         </label>
     </div>
@@ -377,19 +442,19 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="dizzyclose0" name="dizzyclose" value="0" checked>
+            <input type="radio" id="dizzyclose0" name="dizziness_with_eyes_closed" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="dizzyclose1" name="dizzyclose" value="1" >
+            <input type="radio" id="dizzyclose1" name="dizziness_with_eyes_closed" value="1">
             <img src="images/dizzyClose1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="dizzyclose2" name="dizzyclose" value="2" >
+            <input type="radio" id="dizzyclose2" name="dizziness_with_eyes_closed" value="2">
             <img src="images/dizzyClose2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="dizzyclose3" name="dizzyclose" value="3" >
+            <input type="radio" id="dizzyclose3" name="dizziness_with_eyes_closed" value="3">
             <img src="images/dizzyClose3.gif" alt="Basic">
         </label>
     </div>
@@ -407,15 +472,15 @@
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="vertigo1" name="vertigo" value="1" >
+            <input type="radio" id="vertigo1" name="vertigo" value="1">
             <img src="images/vertigo1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="vertigo2" name="vertigo" value="2" >
+            <input type="radio" id="vertigo2" name="vertigo" value="2">
             <img src="images/vertigo2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="vertigo3" name="vertigo" value="3" >
+            <input type="radio" id="vertigo3" name="vertigo" value="3">
             <img src="images/vertigo3.gif" alt="Basic">
         </label>
     </div>
@@ -429,18 +494,18 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="stomach0" name="stomach" value="0" checked>
+            <input type="radio" id="stomach0" name="stomach_awareness" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="stomach1" name="stomach" value="1" >
+            <input type="radio" id="stomach1" name="stomach_awareness" value="1">
             <img src="images/stomach1.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="stomach2" name="stomach" value="2" >
+            <input type="radio" id="stomach2" name="stomach_awareness" value="2">
             <img src="images/stomach2.png" alt="Basic">
         <label>
-            <input type="radio" id="stomach3" name="stomach" value="3" >
+            <input type="radio" id="stomach3" name="stomach_awareness" value="3">
             <img src="images/stomach3.png" alt="Basic">
         </label>
     </div>
@@ -454,26 +519,26 @@
 
     <div class = "pictures">
         <label>
-            <input type="radio" id="burp0" name="burp" value="0" checked>
+            <input type="radio" id="burp0" name="burping" value="0" checked>
             <img src="images/base0.png" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="burp1" name="burp" value="1" >
+            <input type="radio" id="burp1" name="burping" value="1">
             <img src="images/burp1.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="burp2" name="burp" value="2" >
+            <input type="radio" id="burp2" name="burping" value="2">
             <img src="images/burp2.gif" alt="Basic">
         </label>
         <label>
-            <input type="radio" id="burp3" name="burp" value="3" >
+            <input type="radio" id="burp3" name="burping" value="3">
             <img src="images/burp3.gif" alt="Basic">
         </label>
     </div>
-    <input type="submit" name="Submit" value="Submit">
+
+    <input type="submit" onclick="calc()" name="Submit" value="Submit">
 </div>
 </form>
 
 </body>
 </html>
-
